@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<link href="/display.css" rel="stylesheet">
+</head>
+<body>
+	<form action="/pharmacy_report/fill" th:object="${pharmacy_report}"
+		method="POST">
+		<h1>Display drugs and amounts from prescriptions filled between dates.</h1>
+		<p>Enter Pharmacy ID, Start Date and End Date.</p>
+		<p>
+			<span th:text="${message}"></span>
+		</p>
+		<section>
+			<p>
+				<label for="pharmacyid"> <span>Pharmacy ID: </span>
+				</label> <input type="text" id="pharmacyid" th:field="*{pharmacyid}" />
+			</p>
+			<p>
+				<label for="startdate"> <span>Start Date: </span>
+				</label> <input type="date" id="startdate" th:field="*{startdate}" />
+			</p>
+						<p>
+				<label for="enddate"> <span>End Date: </span>
+				</label> <input type="date" id="enddate" th:field="*{enddate}" />
+			</p>
+		</section>
+		<p>
+			<button type="submit">Request Drugs and Quantities</button>
+		</p>
+	</form>
+</body>
+</html>
